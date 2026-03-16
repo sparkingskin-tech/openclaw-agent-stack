@@ -43,6 +43,11 @@ Worker agents:
 - `scripts/`: bridge utilities and local tooling
 - `shell/`: shell wrappers for quick launch
 
+## Related Repositories
+
+- [`openclaw-dashboard`](https://github.com/sparkingskin-tech/openclaw-dashboard): management UI for OpenClaw workflows
+- [`xiaohongshu-publish-skill`](https://github.com/sparkingskin-tech/xiaohongshu-publish-skill): XiaoHongShu publishing skill for OpenClaw/Codex workflows
+
 ## Quick Start
 
 1. Read [`docs/setup-guide.md`](docs/setup-guide.md)
