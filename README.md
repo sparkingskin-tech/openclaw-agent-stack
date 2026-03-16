@@ -47,6 +47,11 @@ Worker agents:
 
 - [`openclaw-dashboard`](https://github.com/sparkingskin-tech/openclaw-dashboard): management UI for OpenClaw workflows
 - [`xiaohongshu-publish-skill`](https://github.com/sparkingskin-tech/xiaohongshu-publish-skill): XiaoHongShu publishing skill for OpenClaw/Codex workflows
+- [`treehole-private`](https://github.com/sparkingskin-tech/treehole-private): Treehole mini-program project (now public)
+
+## Community Signals
+
+- OpenClaw upstream issue contribution: [`openclaw/openclaw#47686`](https://github.com/openclaw/openclaw/issues/47686)
 
 ## Quick Start
 
