@@ -1,0 +1,5 @@
+# Local state
+.happy-codex-bridge/
+
+# macOS
+.DS_Store

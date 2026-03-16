@@ -1,0 +1,84 @@
+{
+  "name": "telegram-agent-workflow",
+  "nodes": [
+    {
+      "id": "telegram-trigger",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [200, 300],
+      "parameters": {}
+    },
+    {
+      "id": "director-router",
+      "name": "Director Router",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [480, 300],
+      "parameters": {
+        "functionCode": "return items;"
+      }
+    },
+    {
+      "id": "agent-worker-call",
+      "name": "Agent Worker Call",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [760, 300],
+      "parameters": {
+        "url": "https://example-agent-endpoint.local/run",
+        "method": "POST"
+      }
+    },
+    {
+      "id": "telegram-reply",
+      "name": "Telegram Reply",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [1040, 300],
+      "parameters": {}
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Director Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Director Router": {
+      "main": [
+        [
+          {
+            "node": "Agent Worker Call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent Worker Call": {
+      "main": [
+        [
+          {
+            "node": "Telegram Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "example-template-v1",
+  "meta": {
+    "template": true,
+    "description": "Starter workflow template for Telegram-driven multi-agent orchestration."
+  }
+}
